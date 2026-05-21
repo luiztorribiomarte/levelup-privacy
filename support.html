@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level Up — Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;
+  --surface:#111;
+  --border:#1e1e1e;
+  --text:#f0ede8;
+  --muted:#888;
+  --accent:#00d4ff;
+  --accent-dim:rgba(0,212,255,0.08);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Barlow Condensed',sans-serif;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+
+/* NAV */
+nav{border-bottom:1px solid var(--border);padding:0 6vw;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;background:rgba(8,8,8,0.92);backdrop-filter:blur(8px);z-index:50}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--accent);text-decoration:none}
+.nav-links{display:flex;gap:32px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.15s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--text)}
+.nav-links a[aria-current]{color:var(--accent)}
+
+/* HERO */
+.hero{padding:80px 6vw 60px;border-bottom:1px solid var(--border)}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,10vw,100px);line-height:0.9;letter-spacing:-1px;margin-bottom:16px}
+.hero-sub{font-size:20px;color:var(--muted);font-weight:400;max-width:480px}
+
+/* SECTION */
+.section{padding:64px 6vw;border-bottom:1px solid var(--border);max-width:900px;margin:0 auto;width:100%}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:32px}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);letter-spacing:0.5px;margin-bottom:24px}
+
+/* CONTACT CARD */
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:12px;max-width:480px;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.contact-card .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.contact-email{font-size:22px;font-weight:700;color:var(--accent);text-decoration:none;letter-spacing:0.5px;word-break:break-all}
+.contact-email:hover{text-decoration:underline}
+.contact-note{font-size:15px;color:var(--muted);font-weight:400}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:2px}
+details{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+details+details{margin-top:8px}
+summary{padding:24px 28px;font-size:18px;font-weight:700;letter-spacing:0.5px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:color 0.15s;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary::after{content:'＋';font-size:20px;color:var(--accent);font-family:'JetBrains Mono',monospace;line-height:1;flex-shrink:0;transition:transform 0.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details[open] summary{color:var(--accent)}
+.faq-body{padding:0 28px 24px;color:var(--muted);font-size:16px;font-weight:400;line-height:1.7;border-top:1px solid var(--border)}
+.faq-body p{padding-top:20px}
+.faq-body strong{color:var(--text)}
+
+/* FOOTER */
+footer{margin-top:auto;padding:32px 6vw;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-text{font-size:13px;color:var(--muted)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color 0.15s}
+.footer-links a:hover{color:var(--accent)}
+
+@media(max-width:600px){
+  .hero{padding:56px 5vw 44px}
+  .section{padding:48px 5vw}
+  nav{padding:0 5vw}
+  footer{padding:24px 5vw}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Level Up</a>
+  <div class="nav-links">
+    <a href="/levelup-privacy/privacy.html">Privacy</a>
+    <a href="/levelup-privacy/support.html" aria-current="true">Support</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Help Center</div>
+  <h1>Support</h1>
+  <p class="hero-sub">Questions about Level Up? We're here to help.</p>
+</div>
+
+<main>
+  <div class="section">
+    <div class="section-label">Contact Us</div>
+    <h2>Get in Touch</h2>
+    <div class="contact-card">
+      <span class="label">Email Support</span>
+      <a href="mailto:luistorribio6@gmail.com" class="contact-email">luistorribio6@gmail.com</a>
+      <span class="contact-note">We typically respond within 24 hours.</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">FAQ</div>
+    <h2>Common Questions</h2>
+    <div class="faq-list">
+
+      <details>
+        <summary>How do I cancel my subscription?</summary>
+        <div class="faq-body">
+          <p>You can cancel at any time directly through Apple:</p>
+          <p>
+            <strong>iPhone Settings</strong> → tap your name at the top → <strong>Subscriptions</strong> → tap <strong>Level Up: Self Tracker</strong> → tap <strong>Cancel Subscription</strong>.
+          </p>
+          <p>Your access continues until the end of the current billing period. No refunds are issued for unused time, per Apple's standard policy.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How is my daily score calculated?</summary>
+        <div class="faq-body">
+          <p>Your daily score is a 0–100 composite across 7 lifestyle pillars:</p>
+          <p>
+            <strong>Habits</strong> — 25 pts &nbsp;·&nbsp;
+            <strong>Workout</strong> — 20 pts &nbsp;·&nbsp;
+            <strong>Sleep</strong> — 15 pts &nbsp;·&nbsp;
+            <strong>Mood</strong> — 10 pts &nbsp;·&nbsp;
+            <strong>Energy</strong> — 10 pts &nbsp;·&nbsp;
+            <strong>Reading</strong> — 10 pts &nbsp;·&nbsp;
+            <strong>Mindfulness</strong> — 10 pts
+          </p>
+          <p>Each pillar is scaled based on the quantity or quality you log that day. The score resets every midnight — yesterday's score is saved in your history.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I reset my app data?</summary>
+        <div class="faq-body">
+          <p>To reset all data and start fresh:</p>
+          <p>From the home screen, tap the <strong>gear icon</strong> (Settings) in the top right corner → scroll to the bottom → tap <strong>Reset All Data</strong> → confirm.</p>
+          <p><strong>Warning:</strong> This permanently deletes all your habits, logs, workout history, and streak data. This action cannot be undone.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Something is broken — how do I get help?</summary>
+        <div class="faq-body">
+          <p>Email us at <a href="mailto:luistorribio6@gmail.com" style="color:var(--accent)">luistorribio6@gmail.com</a> with:</p>
+          <p>
+            · Your iPhone model (e.g., iPhone 15 Pro)<br>
+            · Your iOS version (Settings → General → About)<br>
+            · A description of what happened and what you expected<br>
+            · A screenshot if possible
+          </p>
+          <p>We'll get back to you within 24 hours.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-text">© 2026 Level Up: Self Tracker</span>
+  <div class="footer-links">
+    <a href="/levelup-privacy/privacy.html">Privacy Policy</a>
+    <a href="mailto:luistorribio6@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
